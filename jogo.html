@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Dinossauro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        #game-container {
+            position: relative;
+            width: 800px;
+            max-width: 100%;
+        }
+        
+        #game {
+            border: 2px solid #333;
+            background-color: #fff;
+            image-rendering: pixelated;
+            width: 100%;
+        }
+        
+        #instructions {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+            text-align: center;
+            display: none;
+        }
+        
+        .score {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game" width="800" height="200"></canvas>
+        <div id="score" class="score">Pontuação: 0</div>
+        <div id="game-over" class="game-over">Fim de Jogo!<br>Pressione ESPAÇO para reiniciar</div>
+        <div id="instructions">Pressione ESPAÇO para pular</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('game');
+            const ctx = canvas.getContext('2d');
+            const scoreElement = document.getElementById('score');
+            const gameOverElement = document.getElementById('game-over');
+            const instructionsElement = document.getElementById('instructions');
+            
+            // Ajustar tamanho do canvas para o dispositivo
+            function resizeCanvas() {
+                const container = document.getElementById('game-container');
+                if (window.innerWidth < 800) {
+                    canvas.width = window.innerWidth - 40;
+                } else {
+                    canvas.width = 800;
+                }
+                canvas.height = 200;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Variáveis do jogo
+            let dino = {
+                x: 50,
+                y: canvas.height - 50,
+                width: 30,
+                height: 50,
+                jumping: false,
+                jumpHeight: 100,
+                jumpSpeed: 0,
+                gravity: 0.5
+            };
+            
+            let obstacles = [];
+            let score = 0;
+            let gameSpeed = 5;
+            let gameOver = false;
+            let frameCount = 0;
+            
+            // Controles
+            document.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' || e.key === ' ') {
+                    if (!gameOver && !dino.jumping) {
+                        dino.jumping = true;
+                        dino.jumpSpeed = -12;
+                    } else if (gameOver) {
+                        resetGame();
+                    }
+                }
+            });
+            
+            // Toque para dispositivos móveis
+            canvas.addEventListener('touchstart', function() {
+                if (!gameOver && !dino.jumping) {
+                    dino.jumping = true;
+                    dino.jumpSpeed = -12;
+                } else if (gameOver) {
+                    resetGame();
+                }
+            });
+            
+            // Função para desenhar o dinossauro
+            function drawDino() {
+                ctx.fillStyle = '#333';
+                ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+                
+                // Olho do dinossauro
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(dino.x + 20, dino.y + 10, 5, 5);
+            }
+            
+            // Função para desenhar os obstáculos (cactos)
+            function drawObstacles() {
+                ctx.fillStyle = '#006400';
+                for (let obstacle of obstacles) {
+                    ctx.fillRect(obstacle.x, canvas.height - obstacle.height, obstacle.width, obstacle.height);
+                }
+            }
+            
+            // Função para desenhar o chão
+            function drawGround() {
+                ctx.fillStyle = '#666';
+                ctx.fillRect(0, canvas.height - 5, canvas.width, 5);
+            }
+            
+            // Função para atualizar a física do jogo
+            function updateGame() {
+                frameCount++;
+                
+                // Atualizar dinossauro (pulo)
+                if (dino.jumping) {
+                    dino.y += dino.jumpSpeed;
+                    dino.jumpSpeed += dino.gravity;
+                    
+                    if (dino.y >= canvas.height - dino.height) {
+                        dino.y = canvas.height - dino.height;
+                        dino.jumping = false;
+                        dino.jumpSpeed = 0;
+                    }
+                }
+                
+                // Gerar obstáculos
+                if (frameCount % 100 === 0) {
+                    const height = Math.floor(Math.random() * 30) + 20;
+                    obstacles.push({
+                        x: canvas.width,
+                        width: 15,
+                        height: height,
+                        passed: false
+                    });
+                }
+                
+                // Mover obstáculos
+                for (let i = 0; i < obstacles.length; i++) {
+                    obstacles[i].x -= gameSpeed;
+                    
+                    // Verificar colisão
+                    if (
+                        dino.x < obstacles[i].x + obstacles[i].width &&
+                        dino.x + dino.width > obstacles[i].x &&
+                        dino.y < canvas.height &&
+                        dino.y + dino.height > canvas.height - obstacles[i].height
+                    ) {
+                        gameOver = true;
+                        gameOverElement.style.display = 'block';
+                    }
+                    
+                    // Marcar pontos
+                    if (!obstacles[i].passed && obstacles[i].x + obstacles[i].width < dino.x) {
+                        obstacles[i].passed = true;
+                        score++;
+                        scoreElement.textContent = `Pontuação: ${score}`;
+                        
+                        // Aumentar dificuldade
+                        if (score % 5 === 0) {
+                            gameSpeed += 0.5;
+                        }
+                    }
+                    
+                    // Remover obstáculos que saíram da tela
+                    if (obstacles[i].x + obstacles[i].width < 0) {
+                        obstacles.splice(i, 1);
+                        i--;
+                    }
+                }
+            }
+            
+            // Função principal do jogo
+            function gameLoop() {
+                // Limpar canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                if (!gameOver) {
+                    updateGame();
+                }
+                
+                // Desenhar elementos
+                drawGround();
+                drawDino();
+                drawObstacles();
+                
+                requestAnimationFrame(gameLoop);
+            }
+            
+            // Reiniciar jogo
+            function resetGame() {
+                dino.y = canvas.height - dino.height;
+                dino.jumping = false;
+                dino.jumpSpeed = 0;
+                
+                obstacles = [];
+                score = 0;
+                gameSpeed = 5;
+                gameOver = false;
+                frameCount = 0;
+                
+                scoreElement.textContent = `Pontuação: ${score}`;
+                gameOverElement.style.display = 'none';
+            }
+            
+            // Iniciar o jogo
+            gameLoop();
+        });
+    </script>
+</body>
+</html>

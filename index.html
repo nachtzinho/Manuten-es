@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcelo Manutenções - Especialista em Equipamentos</title>
+    <meta name="description" content="Especialista em conserto e manutenção de compressores, ferramentas elétricas, bombas d'água, lava jato e equipamentos industriais. Serviço com qualidade e garantia.">
+    <meta name="keywords" content="manutenção compressores, conserto ferramentas elétricas, reparo bombas d'água, manutenção lava jato, equipamentos industriais">
+    <meta name="author" content="Marcelo Manutenções">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nobres.netlify.app/">
+    <meta property="og:title" content="Marcelo Manutenções - Especialista em Equipamentos">
+    <meta property="og:description" content="Especialista em conserto e manutenção de compressores, ferramentas elétricas, bombas d'água, lava jato e equipamentos industriais.">
+    <meta property="og:image" content="https://nobres.netlify.app/images/og-image.jpg">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nobres.netlify.app/">
+    <meta property="twitter:title" content="Marcelo Manutenções - Especialista em Equipamentos">
+    <meta property="twitter:description" content="Especialista em conserto e manutenção de compressores, ferramentas elétricas, bombas d'água, lava jato e equipamentos industriais.">
+    <meta property="twitter:image" content="https://nobres.netlify.app/images/og-image.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Marcelo Manutenções",
+      "image": "https://nobres.netlify.app/images/logo.jpg",
+      "description": "Especialista em conserto e manutenção de compressores, ferramentas elétricas, bombas d'água, lava jato e equipamentos industriais.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Cesário de Melo, 10.441",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-22.9068",
+        "longitude": "-43.1729"
+      },
+      "url": "https://nobres.netlify.app",
+      "telephone": "+5521964013124",
+      "openingHours": "Mo-Fr 09:00-17:00, Sa 09:00-12:00",
+      "priceRange": "$$",
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "-22.9068",
+          "longitude": "-43.1729"
+        },
+        "geoRadius": "50000"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+                <h2>Marcelo <span>Manutenções</span></h2>
+            </div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+                <h1>Marcelo <span>Manutenções</span></h1>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#marcas" class="nav-link">Marcas</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="theme-toggle-container mobile-theme-toggle">
+                    <span class="theme-toggle-text">Claro</span>
+                    <div class="theme-toggle" id="themeToggle">
+                        <div class="theme-toggle-handle"></div>
+                    </div>
+                    <span class="theme-toggle-text">Escuro</span>
+                </div>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <div class="theme-toggle-container desktop-theme-toggle">
+                <span class="theme-toggle-text">Claro</span>
+                <div class="theme-toggle" id="desktopThemeToggle">
+                    <div class="theme-toggle-handle"></div>
+                </div>
+                <span class="theme-toggle-text">Escuro</span>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="hero" id="inicio">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Especialista em</span>
+                    <span class="hero-title-line"><span class="highlight">Conserto de Equipamentos</span></span>
+                </h1>
+                <p class="hero-description">
+                    Conserto e manutenção especializada em equipamentos hidráulicos, pneumáticos, 
+                    compressores, lava jato, motores e ferramentas elétricas. Qualidade e garantia em todos os serviços.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5521964013124?text=Olá! Gostaria de solicitar um orçamento." 
+                       class="btn btn-primary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span>Solicitar Orçamento</span>
+                    </a>
+                    <a href="#servicos" class="btn btn-secondary">
+                        <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                        <span>Ver Serviços</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Clientes Satisfeitos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1000">0</div>
+                    <div class="stat-label">Serviços Realizados</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Nossos Serviços</span>
+                <h2 class="section-title">Especialistas em Conserto e Manutenção</h2>
+                <p class="section-description">
+                    Oferecemos serviços especializados para diversos tipos de equipamentos com qualidade e garantia
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-compress-arrows-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Compressores de Ar</h3>
+                        <p>Conserto e manutenção de compressores de alta e baixa pressão de todas as marcas e modelos.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Manutenção preventiva e corretiva</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Troca de peças e componentes</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Reparo de válvulas e motores</li>
+                        </ul>
+                        <a href="#contato" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spray-can" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Lava Jato</h3>
+                        <p>Reparo e manutenção de equipamentos de lava jato de alta e baixa pressão.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Bomba de alta pressão</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Motores e sistemas elétricos</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Mangueiras e conexões</li>
+                        </ul>
+                        <a href="#contato" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-toolbox" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Ferramentas Elétricas</h3>
+                        <p>Conserto de furadeiras, makitas e diversas ferramentas elétricas profissionais.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Furadeiras e parafusadeiras</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Esmerilhadeiras e lixadeiras</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Reparo de motores e engrenagens</li>
+                        </ul>
+                        <a href="#contato" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-water" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Bombas D'Água</h3>
+                        <p>Manutenção e reparo de bombas d'água residenciais e industriais.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Conserto de motores</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Troca de selos mecânicos</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Reparo de impulsoras</li>
+                        </ul>
+                        <a href="#contato" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Enrolamento de Motores</h3>
+                        <p>Serviço especializado em enrolamento e rewinding de motores elétricos.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Enrolamento completo</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Balanceamento e teste</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Manutenção preventiva</li>
+                        </ul>
+                        <a href="#contato" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools" aria-hidden="true"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Equipamentos Industriais</h3>
+                        <p>Conserto de macaco jacaré, prensas e outros equipamentos industriais.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Macaco hidráulico</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Prensa hidráulica</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Sistemas pneumáticos</li>
+                        </ul>
+                        <a href="#contato" class="service-btn">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="brands" id="marcas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Trabalhamos com</span>
+                <h2 class="section-title">Todas as Marcas</h2>
+                <p class="section-description">
+                    Especialistas no conserto e manutenção das principais marcas do mercado
+                </p>
+            </div>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-industry" aria-hidden="true"></i>
+                    </div>
+                    <h3>Compressores</h3>
+                    <p>Schulz, Atlas Copco, Ingersoll Rand e outras</p>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-toolbox" aria-hidden="true"></i>
+                    </div>
+                    <h3>Ferramentas</h3>
+                    <p>Makita, Bosch, DeWalt, Black & Decker</p>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-water" aria-hidden="true"></i>
+                    </div>
+                    <h3>Bombas D'Água</h3>
+                    <p>Schneider, Lorenzetti, Dancor, Shimizu</p>
+                </div>
+                <div class="brand-item">
+                    <div class="brand-logo">
+                        <i class="fas fa-spray-can" aria-hidden="true"></i>
+                    </div>
+                    <h3>Lava Jato</h3>
+                    <p>Karcher, Hidrobras, Jacto, Haaga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-subtitle">Quem somos</span>
+                    <h2 class="section-title">Marcelo Manutenções</h2>
+                    <p>Com mais de 12 anos de experiência no mercado, a Marcelo Manutenções se consolidou como referência em serviços de conserto e manutenção de equipamentos. Nossa missão é proporcionar soluções rápidas, eficazes e com a mais alta qualidade para nossos clientes.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award" aria-hidden="true"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Qualidade Garantida</h4>
+                                <p>Todos os nossos serviços possuem garantia e são executados com os mais altos padrões de qualidade.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Agilidade</h4>
+                                <p>Entendemos a urgência dos nossos clientes e trabalhamos com prazos otimizados sem comprometer a qualidade.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake" aria-hidden="true"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Confiança</h4>
+                                <p>Relacionamento transparente, orçamentos justos e atendimento personalizado que entende suas necessidades.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Fale conosco</span>
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-description">
+                    Estamos prontos para atender você. Entre em contato e solicite seu orçamento.
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <article class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p><a href="tel:+5521964013124">(21) 96401-3124</a></p>
+                            <span>Seg a Sex: 9h às 17h</span>
+                        </div>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/5521964013124" target="_blank" rel="noopener">(21) 96401-3124</a></p>
+                            <span>Atendimento das 8h às 17h</span>
+                        </div>
+                    </article>
+
+                    <article class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                        <div class="contact-details">
+                            <h4>Endereço</h4>
+                            <p>Av. Cesário de Melo, 10.441</p>
+                            <span>Bairro Paciência - Rio de Janeiro</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">O que nossos clientes dizem</span>
+                <h2 class="section-title">Depoimentos</h2>
+                <p class="section-description">
+                    Confira a opinião de quem já utilizou nossos serviços
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"Serviço excelente! Consertaram meu compressor rapidamente e com preço justo. Recomendo!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Cliente</h4>
+                        <span>Oficina Mecânica</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <p>"Minha bomba d'água quebrou e eles resolveram o problema no mesmo dia. Atendimento de qualidade!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Cliente</h4>
+                        <span>Residencial</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+                        </div>
+                        <p>"Ótimo profissional! Consertou todas as minhas ferramentas elétricas e ainda deu dicas de manutenção."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Cliente</h4>
+                        <span>Construtor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-tools" aria-hidden="true"></i>
+                        <h3>Marcelo <span>Manutenções</span></h3>
+                    </div>
+                    <p>Especialistas em conserto e manutenção de equipamentos com qualidade, agilidade e garantia. Sua satisfação é nossa prioridade.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5521964013124" aria-label="WhatsApp" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#servicos">Compressores de Ar</a></li>
+                        <li><a href="#servicos">Lava Jato</a></li>
+                        <li><a href="#servicos">Ferramentas Elétricas</a></li>
+                        <li><a href="#servicos">Bombas D'Água</a></li>
+                        <li><a href="#servicos">Enrolamento de Motores</a></li>
+                    </ul>
+                </div>
+                
+                   <div class="footer-col">
+                    <h4>Horário de Atendimento</h4>
+                    <div class="schedule">
+                        <div class="schedule-item">
+                            <span>Segunda a Sexta:</span>
+                            <span>9h às 17h</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Sábado:</span>
+                            <span>9h às 12h</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span>Domingo:</span>
+                            <span>Fechado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Marcelo Manutenções. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart" aria-hidden="true"></i> por Nacht para oferecer a melhor experiência</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5521964013124?text=Olá! Gostaria de solicitar um orçamento." 
+       class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="whatsapp-text">Fale Conosco</span>
+    </a>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
